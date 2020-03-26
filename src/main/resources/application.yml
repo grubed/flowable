@@ -1,0 +1,25 @@
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/test15?characterEncoding=UTF-8&nullCatalogMeansCurrent=true&&createDatabaseIfNotExist=true
+    username: root
+    password: 123456
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  data:
+    mongodb:
+      # host: 47.98.210.8
+      authentication-database: admin
+      port: 27017
+      database: test0
+      uri: mongodb://mongodb1.local:27017,mongodb2.local:27018/admin?replicaSet=rs0
+flowable:
+  #关闭定时任务JOB
+  async-executor-activate: true
+  #  将databaseSchemaUpdate设置为true。当Flowable发现库与数据库表结构不一致时，会自动将数据库表结构升级至新版本。
+  database-schema-update: true
+server:
+  port: 8090
